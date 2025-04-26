@@ -12,10 +12,10 @@ body {
 }
 
 .logo-img {
-    width: 40px; /* Tamanho do logo */
+    width: 40px;
     height: 40px;
-    margin-right: 10px; /* Espaço entre o logo e o texto */
-    vertical-align: middle; /* Alinha no meio do texto */
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 a {
@@ -78,22 +78,20 @@ nav a:hover {
     font-size: 1.2rem;
 }
 
-/* ---------------------- */
-/* NOVO CSS ADICIONADO para imagem e texto */
-/* ---------------------- */
+/* Imagem e Texto */
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap; /* Responsivo para celular */
+    flex-wrap: wrap;
 }
 
 .hero-img img {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    border-radius: 50%; /* Deixa a imagem redonda */
+    border-radius: 50%;
     border: 3px solid #00aaff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
@@ -111,7 +109,6 @@ nav a:hover {
 .hero-text p {
     font-size: 1.2rem;
 }
-/* ---------------------- */
 
 .section {
     padding: 4rem 0;
@@ -170,40 +167,40 @@ nav a:hover {
     transform: translateY(0);
 }
 
+/* Formação */
 #formacao {
-    background-color: #1a1f35; /* Cor de fundo para a seção */
-    color: #ffffff; /* Cor do texto */
-    padding: 4rem 0; /* Espaçamento em cima e embaixo */
-    border-radius: 8px; /* Arredonda as bordas da seção */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra ao redor da seção */
+    background-color: #1a1f35;
+    color: #ffffff;
+    padding: 4rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 #formacao h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    text-align: center; /* Centraliza o título */
+    text-align: center;
 }
 
 #formacao p {
     font-size: 1rem;
     line-height: 1.6;
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 1rem; /* Adiciona espaçamento entre os parágrafos */
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-/* Estilo do link do TCC */
 #formacao a {
-    color: #00aaff; /* Cor do link */
+    color: #00aaff;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 #formacao a:hover {
-    color: #ffcc00; /* Cor ao passar o mouse */
+    color: #ffcc00;
 }
 
-/* Responsividade para dispositivos móveis */
+/* Responsividade */
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -275,7 +272,6 @@ nav a:hover {
     }
 }
 
-/* Responsividade para telas menores que 480px */
 @media screen and (max-width: 480px) {
     .hero {
         padding: 100px 0 50px;
@@ -317,31 +313,64 @@ nav a:hover {
     }
 }
 
+/* Partículas */
 #particles-js {
-    position: fixed; /* Tornando o fundo das partículas fixo */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Garantir que o efeito cubra toda a altura da tela */
-    z-index: -1; /* Coloca o efeito abaixo do conteúdo */
-  }
-
-  #particles-js {
-    position: absolute; /* Fica por trás dos elementos */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Coloca as partículas atrás do conteúdo */
-  }
+    z-index: -1;
+}
 
-  #particles-projects {
+#particles-projects {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Altura total da janela */
-    z-index: -1; /* Para garantir que o conteúdo da página fique acima */
-  }
-  
-  
+    height: 100vh;
+    z-index: -1;
+}
+
+/* ----------- NOVO: Menu Hamburguer ------------- */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    nav {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+        background: rgba(0, 0, 0, 0.9);
+        border-radius: 10px;
+        padding: 0 20px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    nav.show {
+        max-height: 500px;
+        transition: max-height 0.5s ease-in;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+}
