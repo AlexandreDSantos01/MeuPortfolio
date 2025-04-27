@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden; /* Impede a rolagem horizontal */
-}
-
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #0b0f1a;
@@ -17,7 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* Logo */
 .logo-img {
     width: 40px;
     height: 40px;
@@ -30,7 +23,6 @@ a {
     text-decoration: none;
 }
 
-/* Cabeçalho */
 header {
     background-color: #11172a;
     padding: 1rem 0;
@@ -42,10 +34,10 @@ header {
 }
 
 .container {
-    width: 100%;  /* Ocupa toda a largura */
-    height: 100%; /* Ocupa toda a altura */
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
@@ -54,10 +46,9 @@ header {
     font-size: 1.8rem;
     font-weight: bold;
     display: flex;
-    align-items: center;
+    align-items: center; /* Alinha logo e nome na mesma linha */
 }
 
-/* Navegação */
 nav ul {
     display: flex;
     gap: 1.5rem;
@@ -74,12 +65,10 @@ nav a:hover {
     color: #00aaff;
 }
 
-/* Seção Hero */
 .hero {
-    padding: 100px 20px;
+    padding: 150px 0 100px;
     background: linear-gradient(145deg, #121b3a, #0b0f1a);
     text-align: center;
-    height: 100vh; /* A hero section ocupa toda a altura da tela */
 }
 
 .hero h2 {
@@ -91,23 +80,36 @@ nav a:hover {
     font-size: 1.2rem;
 }
 
+/* Imagem e Texto */
 .hero-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .hero-img img {
-    max-width: 100%;
-    height: auto;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
     border-radius: 50%;
+    border: 3px solid #00aaff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text {
     max-width: 600px;
     text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
 }
 
 .section {
@@ -200,44 +202,31 @@ nav a:hover {
     color: #ffcc00;
 }
 
-/* Responsividade para celular */
-@media (max-width: 768px) {
-    /* Corpo */
-    body {
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Ajustes no header */
-    header {
-        padding: 0.5rem 0;
-    }
-
-    /* Container e navegação */
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    /* Alinha logo e menu para celulares */
     .container {
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
+        flex-direction: column; 
+        align-items: flex-start;
     }
 
     nav ul {
         display: none; /* Esconde o menu inicialmente */
-        width: 100%; /* Ocupa toda a largura */
+        width: 100%; /* Faz o menu ocupar toda a largura da tela */
         background: rgba(0, 0, 0, 0.9);
         position: absolute;
         top: 70px;
-        left: 0;
+        left: 0; /* Alinha o menu à esquerda */
         z-index: 1000;
+        padding: 1rem;
         border-radius: 10px;
-        padding: 10px 0;
     }
 
     nav.show ul {
-        display: flex;
+        display: flex; /* Exibe o menu quando ativado */
         flex-direction: column;
-        gap: 20px;
+        gap: 1rem;
         padding: 20px 0;
-        justify-content: center;
     }
 
     .menu-toggle {
@@ -245,16 +234,29 @@ nav a:hover {
         font-size: 2rem;
         color: white;
         cursor: pointer;
-        margin-left: auto;
+        margin-left: auto; /* Move o menu hambúrguer para a direita */
     }
 
-    /* Ajustes para a hero section */
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+
+    /* Ajusta a seção Hero para celular */
     .hero {
-        padding: 70px 20px;
-        height: 100vh;
+        padding: 70px 20px 50px; 
     }
 
-    /* Ajustes nos cards */
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .card-projeto {
         padding: 10px;
     }
@@ -264,8 +266,13 @@ nav a:hover {
         height: auto;
     }
 
-    .hero-container {
-        flex-direction: column;
+    /* Ajusta fontes para celular */
+    #formacao h2 {
+        font-size: 1.5rem;
+    }
+
+    #formacao p {
+        font-size: 1rem;
     }
 }
 
@@ -286,4 +293,48 @@ nav a:hover {
     width: 100%;
     height: 100vh;
     z-index: -1;
+}
+
+/* Menu Hamburguer */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    nav {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+        background: rgba(0, 0, 0, 0.9);
+        border-radius: 10px;
+        padding: 0 20px;
+        position: absolute;
+        top: 70px;
+        left: 0; /* Alinha o menu à esquerda */
+        width: 100%; /* Faz o menu ocupar toda a largura da tela */
+        z-index: 1000;
+    }
+
+    nav.show {
+        max-height: 500px;
+        transition: max-height 0.5s ease-in;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
 }
