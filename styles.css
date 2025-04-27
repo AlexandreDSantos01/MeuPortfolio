@@ -217,9 +217,11 @@ nav a:hover {
         background: rgba(0, 0, 0, 0.9);
         position: absolute;
         top: 70px;
-        right: 20px;
+        left: 0; /* Alinha o menu à esquerda */
+        width: 100%; /* Ocupa toda a largura */
+        padding: 20px 0;
+        z-index: 1000;
         border-radius: 10px;
-        width: 200px;
     }
 
     nav.show ul {
