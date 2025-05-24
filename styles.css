@@ -38,6 +38,8 @@ header {
     max-width: 1200px;
     margin: auto;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
 }
@@ -232,79 +234,13 @@ nav a:hover {
     margin-left: auto;
 }
 
-/* ========== RESPONSIVIDADE ========== */
-@media screen and (max-width: 1024px) {
-    .projeto-img {
-        width: 100%;
-        height: auto;
-    }
 
-    .hero h2 {
-        font-size: 2rem;
-    }
 
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .section h2 {
-        font-size: 1.8rem;
-    }
-
-    .conteudo-projeto p {
-        font-size: 1rem;
-    }
-}
-
-/* Responsividade para até 768px */
-@media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    display: none;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 70px;
-    left: 0;
-    z-index: 1000;
-    padding: 1rem;
-    border-radius: 10px;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  nav.show ul {
-    display: flex;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .nav-links li a {
-    font-size: 1.2rem;
-  }
-
-  .hero {
-    padding: 100px 20px 50px;
-  }
-
+/* Responsividade geral */
+@media (max-width: 1024px) {
   .hero-container {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .card-projeto {
-    padding: 10px;
+    text-align: center;
   }
 
   .projeto-img {
@@ -312,46 +248,58 @@ nav a:hover {
     height: auto;
   }
 
-  #formacao h2 {
-    font-size: 1.5rem;
-  }
-
-  #formacao p {
-    font-size: 1rem;
-  }
-
-  .conteudo-projeto h3 {
-    font-size: 1.2rem;
+  .card-projeto {
+    margin-bottom: 2rem;
   }
 }
 
-/* Responsividade para até 480px */
-@media screen and (max-width: 480px) {
-  .hero h2,
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    background-color: #11172a;
+    padding: 1rem;
+    display: none;
+  }
+
+  nav ul li {
+    margin-bottom: 1rem;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Estilo para imagens e textos menores em telas pequenas */
+@media (max-width: 480px) {
+  .hero-img img {
+    width: 180px;
+    height: 180px;
+  }
+
   .hero-text h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .hero-text p {
     font-size: 1rem;
   }
 
-  .logo {
-    font-size: 1.2rem;
+  .section h2 {
+    font-size: 1.5rem;
   }
 
-  .logo-img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .conteudo-projeto h3 {
-    font-size: 1rem;
-  }
-
-  .nav-links li a {
-    font-size: 1rem;
+  .conteudo-projeto p {
+    font-size: 0.85rem;
   }
 }
-
-
