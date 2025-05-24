@@ -215,6 +215,47 @@ nav a:hover {
     color: #ffcc00;
 }
 
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media screen and (max-width: 1024px) {
+    .projeto-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .conteudo-projeto p {
+        font-size: 1rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -242,10 +283,6 @@ nav a:hover {
 
     .menu-toggle {
         display: block;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        margin-left: auto;
     }
 
     .nav-links {
@@ -258,13 +295,12 @@ nav a:hover {
     }
 
     .hero {
-        padding: 70px 20px 50px;
+        padding: 100px 20px 50px;
     }
 
     .hero-container {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
     }
 
     .card-projeto {
@@ -285,56 +321,26 @@ nav a:hover {
     }
 }
 
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-
-
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    margin-left: auto;
-}
-
-@media (max-width: 768px) {
-    nav {
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.5s ease-out;
-        background: rgba(0, 0, 0, 0.9);
-        border-radius: 10px;
-        padding: 0 20px;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
+@media screen and (max-width: 480px) {
+    .hero h2,
+    .hero-text h2 {
+        font-size: 1.5rem;
     }
 
-    nav.show {
-        max-height: 500px;
-        transition: max-height 0.5s ease-in;
+    .hero-text p {
+        font-size: 1rem;
     }
 
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 0;
-    }
-
-    .nav-links li a {
+    .logo {
         font-size: 1.2rem;
+    }
+
+    .logo-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .conteudo-projeto h3 {
+        font-size: 1rem;
     }
 }
